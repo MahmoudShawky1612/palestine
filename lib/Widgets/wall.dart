@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:palestine/Widgets/wall_block.dart';
 import 'package:palestine/Widgets/wall_description.dart';
 import 'package:palestine/Widgets/wall_header.dart';
-import 'buttons.dart';
 
 class Wall extends StatefulWidget {
   final List<Map<dynamic, dynamic>> posts;
@@ -31,7 +30,7 @@ class _WallState extends State<Wall> {
         var firebaseData = snapshot.data?.docs ?? [];
         return Stack(
           children: [
-            firebaseData.isEmpty ? Center(child: Text("No Feeds Yet"))
+            firebaseData.isEmpty ? Center(child: Text("No Feeds Yet",style: TextStyle(color: Colors.grey),))
             :ListView.builder(
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
